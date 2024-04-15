@@ -106,7 +106,7 @@ class MultiHighLightText extends StatelessWidget {
     for (HighlightItem item in list) {
       if (item.range == null) {
         // Match the position where the text appears in the full text
-        var matches = item.text!.allMatches(text).toList();
+        var matches = item.text!.toLowerCase().allMatches(text.toLowerCase()).toList();
         for (var match in matches) {
           int start = match.start;
           int end = start + match.pattern.toString().length;
